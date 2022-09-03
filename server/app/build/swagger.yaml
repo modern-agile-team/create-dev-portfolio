@@ -1,0 +1,193 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: 'dev-portfolio API'
+  description: 'dev-portfolio API'
+servers:
+  - url: http://localhost:3000/
+paths:
+  /api/visitor:
+    get:
+      summary: 'Get number of visitors API'
+      responses:
+        '200':
+          descriptoin: 'OK'
+          content:
+            application/json:
+              schema:
+                properties:
+                  visitorCount:
+                    type: number
+                    example: number
+        '500':
+          descripiton: 'Interval Server Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    put:
+      summary: 'Increase in number of visitors API'
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                properties:
+                  msg:
+                    type: string
+                    example: 'string'
+        '500':
+          descripiton: 'Interval Server Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/visitor/comment:
+    get:
+      summary: 'Get comment API'
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                properties:
+                  visitorComments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        nickname:
+                          type: string
+                          example: 'string'
+                        description:
+                          type: string
+                          example: 'string'
+                        date:
+                          type: string
+                          example: 'string'
+        '500':
+          descripiton: 'Interval Server Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: 'Create comment API'
+      responses:
+        '201':
+          description: 'Created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+        '409':
+          description: 'Conflict'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+        '404':
+          description: 'Bad Request'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          descripiton: 'Interval Server Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/visitor/comment/{id}:
+    patch:
+      summary: 'Update comment API'
+      parameters:
+        - name: id
+          in: path
+          description: 'visitor comment id'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '401':
+          description: 'Unauthorized'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '404':
+          description: 'Bad Request'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '500':
+          description: 'Interval Server Error'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: 'Delete comment API'
+      parameters:
+        - name: id
+          in: path
+          description: 'visitor comment id'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '404':
+          description: 'Bad Request'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '409':
+          description: 'Conflict'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '500':
+          description: 'Interval Server Error'
+          content:
+            applciation/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: 'string'
+    Result:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: 'boolean'
+        msg:
+          type: string
+          example: 'string'
