@@ -28,8 +28,6 @@ services:
     container_name: dev-portfolio-nodejs-container
     ports:
       - 8000:8000
-    # volumes:
-    #   - ./logs:/usr/server/logs
     env_file: ./app/.env
     networks:
       - dev-portfolio
