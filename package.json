@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:client": "cd dev-portfolio && npm start"
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && node app.js",
+    "start:all": "npx pm2 start 'npm run start:client' && npx pm2 start 'npm run start:server' "
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/modern-agile-team/create-dev-portfolio/issues"
   },
-  "homepage": "https://github.com/modern-agile-team/create-dev-portfolio#readme"
+  "homepage": "https://github.com/modern-agile-team/create-dev-portfolio#readme",
+  "dependencies": {
+    "pm2": "^5.2.0"
+  }
 }

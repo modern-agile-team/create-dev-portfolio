@@ -12,11 +12,7 @@ import {
   Experience,
   TechStackInput,
 } from "dev-portfolio";
-import {
-  logoOptionDefault,
-  channelOptionDefault,
-  sideBarOptionDefault,
-} from "./defaultProps/HeaderProps";
+import { logoOptionDefault, channelOptionDefault, sideBarOptionDefault } from "./defaultProps/HeaderProps";
 import {
   techStacksDefault,
   historyListDefault,
@@ -57,15 +53,11 @@ function App() {
         <TechStackList techStackList={techStacksDefault} />
       </TeckStackWrap>
       <SizeAdjustment id="EXPERIENCE">
-        <Experience
-          theme="vertical"
-          verticalOption={{ shape: "round-square" }}
-          historyList={historyListDefault}
-        />
+        <Experience theme="vertical" verticalOption={{ shape: "round-square" }} historyList={historyListDefault} />
       </SizeAdjustment>
       <GalleryWrap id="PROJECT">
         <h2>Project</h2>
-        <Gallery col={2} padding="0em 10em">
+        <Gallery column={2} padding="0em 10em">
           <Item
             redirectURL="https://dongurami.co.kr/"
             imgURL="common/circle.png"
@@ -140,11 +132,7 @@ function App() {
           />
         </Masonry>
       </SizeAdjustment>
-      <Contact
-        id="CONTACT"
-        backgroundColor="#c3c7de33"
-        contactOption={contactOptionDefault}
-      />
+      <Contact id="CONTACT" backgroundColor="#c3c7de33" {...contactOptionDefault} />
     </div>
   );
 }
