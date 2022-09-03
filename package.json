@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:client": "cd client && npm start",
-    "start:server": "cd server && node app.js",
+    "start:server": "cd server/app && npm run start:prod",
     "start:all": "npx pm2 start 'npm run start:client' && npx pm2 start 'npm run start:server' ",
-    "bootstrap": "cd client && npm install && cd ../server && npm install"
+    "bootstrap": "cd client && npm install && cd ../server/app && npm install"
   },
   "repository": {
     "type": "git",
