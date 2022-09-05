@@ -1,8 +1,8 @@
-create database dev_portfolio;
+CREATE DATABASE IF NOT EXISTS dev_portfolio;
 
-use dev_portfolio
+USE dev_portfolio;
 
-CREATE TABLE `number_of_visitors` (
+CREATE TABLE IF NOT EXISTS `number_of_visitors` (
   `visitor_id` int NOT NULL AUTO_INCREMENT,
   `total_count` int NOT NULL DEFAULT '0',
   `today_count` int DEFAULT '0',
@@ -10,7 +10,7 @@ CREATE TABLE `number_of_visitors` (
   PRIMARY KEY (`visitor_id`)
 );
 
-CREATE TABLE `visitor_comments` (
+CREATE TABLE IF NOT EXISTS `visitor_comments` (
   `visitor_comment_id` int NOT NULL AUTO_INCREMENT,
   `nickname` varchar(20) NOT NULL,
   `password` varchar(60) NOT NULL,
