@@ -3,18 +3,15 @@ version: "3"
 services:
   db:
     image: mysql:8.0.30
+    platform: linux/amd64
     container_name: dev-portfolio-mysql
     ports:
       - 3306:3306
     volumes:
+      - ./.db/etc/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
       - ./.db/data:/var/lib/mysql
       - ./.db/initdb.d:/docker-entrypoint-initdb.d
-    env_file: ./app/.env
-    environment:
-      TZ: Asia/Seoul
-    networks:
-      - dev-portfolio
-    platform: linux/amd64
+    env_file: ./.docker.env
     restart: always
 
   nodejs:
@@ -28,9 +25,4 @@ services:
     ports:
       - 8000:8000
     env_file: ./app/.env
-    networks:
-      - dev-portfolio
     restart: always
-
-networks:
-  dev-portfolio:
