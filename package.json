@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:client": "cd client && npm start",
     "start:server": "cd server/app && npm run start:prod",
-    "start:all": "npx pm2 start 'npm run start:client' && npx pm2 start 'npm run start:server' ",
+    "start:all": "docker-compose -f ./server/docker-compose.yml up && npx pm2 start 'npm run start:client'",
     "bootstrap": "cd client && npm install && cd ../server/app && npm install"
   },
   "repository": {
