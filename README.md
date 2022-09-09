@@ -3,8 +3,6 @@
 ![docker-compose-badge](https://img.shields.io/badge/Docker_Compose-red)
 ![docker-compose-badge](https://img.shields.io/badge/TypeScript-blue)
 
-Open source that automatically builds [dev-portfolio](https://github.com/modern-agile-team/dev-portfolio)'s backend, such as API server and MariaDB server.
-
 ## Before
 
 > prepare in advance for setting up the development environment.
