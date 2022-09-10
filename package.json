@@ -7,7 +7,7 @@
     "start:all": "docker-compose -f ./server/docker-compose.yml up -d && npx pm2 start 'npm run start:client'",
     "start:client": "cd client && npm start",
     "exit:all": "docker-compose -f ./server/docker-compose.yml down && npx pm2 delete all",
-    "bootstrap": "cd client && npm install && cd ../server/app && npm install"
+    "bootstrap": "cd client && npm ci && cd ../server/app && npm ci"
   },
   "repository": {
     "type": "git",
