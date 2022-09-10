@@ -26,12 +26,12 @@ By default, it works normally without modification.
 
 ```bash
 # Move to dev-portfolio folder.
-$ cd dev-portfolio/config
+$ cd dev-portfolio
 
 # Customize the .*.env file as you.
-$ vi .client.env
-$ vi .server.env
-$ vi .docker.env
+$ vi ./config/.client.env
+$ vi ./config/.server.env
+$ vi ./config/.docker.env
 ```
 
 3. Run ```dev-portfolio``` by daemon.
