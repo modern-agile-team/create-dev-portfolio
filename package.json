@@ -20,7 +20,5 @@
     "url": "https://github.com/modern-agile-team/create-dev-portfolio/issues"
   },
   "homepage": "https://github.com/modern-agile-team/create-dev-portfolio#readme",
-  "dependencies": {
-    "pm2": "^5.2.0"
-  }
+  "dependencies": {}
 }
