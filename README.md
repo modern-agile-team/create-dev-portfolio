@@ -45,3 +45,15 @@ $ npm run start:all
 ```bash
 $ npm run exit:all
 ```
+
+---
+
+## Swagger API
+You can view server apis very easily by using the Swagger documentation.  
+To use the swagger, the ```dev-portfolio``` server must be in a working state.  
+
+If the server is up, go to the link below.
+
+```bash
+http://localhost:YOUR_SERVER_PORT/swagger
+```
