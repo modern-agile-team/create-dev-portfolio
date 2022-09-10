@@ -55,5 +55,5 @@ To use the swagger, the ```dev-portfolio``` server must be in a working state.
 If the server is up, go to the link below.
 
 ```bash
-http://localhost:YOUR_SERVER_PORT/swagger
+http://localhost:<YOUR_SERVER_PORT>/swagger
 ```
