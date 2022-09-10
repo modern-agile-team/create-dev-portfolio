@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:all": "docker-compose -f ./server/docker-compose.yml up -d && npx pm2 start 'npm run start:client'",
-    "start:client": "cd client && npm start",
+    "start:server": "docker-compose -f ./server/docker-compose.yml up -d",
+    "start:client": "env-cmd -f ./config/.client.env npm start --prefix ./client/app",
     "exit:all": "docker-compose -f ./server/docker-compose.yml down && npx pm2 delete all",
     "bootstrap": "cd client && npm ci && cd ../server/app && npm ci"
   },
@@ -20,5 +21,7 @@
     "url": "https://github.com/modern-agile-team/create-dev-portfolio/issues"
   },
   "homepage": "https://github.com/modern-agile-team/create-dev-portfolio#readme",
-  "dependencies": {}
+  "dependencies": {
+    "env-cmd": "^10.1.0"
+  }
 }
