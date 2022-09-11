@@ -17,28 +17,43 @@
 1. Install this repo.
 
 ```bash
-# install this repo
-$ npx create-dev-portfolio dev-portfolio
+# Install this repo
+$ npx create-dev-portfolio <YOUR_CUSTOMIZED_REPOSITORY_NAME>
 ```
 
-2. Create a file called '.env' to execute.
+2. Modify files called ```.*.env``` to execute.  
+By default, it works normally without modification.
 
 ```bash
-# move to dev-portfolio folder.
+# Move to dev-portfolio folder.
 $ cd dev-portfolio
 
-# create a file
-$ vi .env
+# Customize the .*.env file as you.
+$ vi ./config/.client.env
+$ vi ./config/.server.env
+$ vi ./config/.docker.env
 ```
 
-2-2. Write your private values in '.env'.
-
-```bash
-...
-```
-
-3. Run Dev-portfolio by daemon.
+3. Run ```dev-portfolio``` by daemon.
 
 ```bash
 $ npm run start:all
+```
+
+## Exit
+
+```bash
+$ npm run exit:all
+```
+
+---
+
+## Swagger API
+You can view server apis very easily by using the Swagger documentation.  
+To use the swagger, the ```dev-portfolio``` server must be in a working state.  
+
+If the server is up, go to the link below.
+
+```bash
+http://localhost:<YOUR_SERVER_PORT>/swagger
 ```
