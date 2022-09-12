@@ -36,17 +36,21 @@ $ npm run exit:all
 ---
 
 ## Tip
-Customize files called ```.*.env```.  
-By default, it works normally without modification.
+1. **If you want to customize your client, check to README.md in [dev-portfolio](https://github.com/modern-agile-team/dev-portfolio).**    
+please go to the link below!   
 
-```bash
-# Move to dev-portfolio folder.
-$ cd dev-portfolio
+    https://github.com/modern-agile-team/dev-portfolio/blob/master/README.md
 
-# Customize the .*.env file as you.
-$ vi ./config/.client.env
-$ vi ./config/.server.env
-```
+2. **If you want to change environment variables such as PORT, DB, customize files called ```.*.env```.**  
+By default, it works normally without modification.  
+    ```bash
+    # Move to dev-portfolio folder.
+    $ cd dev-portfolio
+
+    # Customize the .*.env file as you.
+    $ vi ./config/.client.env
+    $ vi ./config/.server.env
+    ```
 
 ---
 
