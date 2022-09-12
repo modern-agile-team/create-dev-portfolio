@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:all": "docker-compose -f ./server/docker-compose.yml up -d && npx pm2 start 'npm run start:client'",
-    "start:server": "docker-compose -f ./server/docker-compose.yml up -d",
-    "start:client": "env-cmd -f ./config/.client.env npm start --prefix ./client/app",
-    "exit:all": "docker-compose -f ./server/docker-compose.yml down && npx pm2 delete all",
-    "bootstrap": "npm ci && cd client/app && npm ci && cd ../../server/app && npm ci"
+    "start:all": "bash ./scripts/start-all.sh",
+    "start:server": "bash ./scripts/start-server.sh",
+    "start:client": "bash ./scripts/start-client.sh",
+    "exit:all": "bash ./scripts/exit-all.sh",
+    "bootstrap": "bash ./scripts/update-packages.sh"
   },
   "repository": {
     "type": "git",

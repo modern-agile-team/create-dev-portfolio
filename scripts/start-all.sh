@@ -1,0 +1,1 @@
+docker-compose -f ./server/docker-compose.yml up -d && npx pm2 start 'npm run start:client'

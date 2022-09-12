@@ -1,0 +1,1 @@
+env-cmd -f ./config/.client.env npm start --prefix ./client/app

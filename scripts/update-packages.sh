@@ -1,0 +1,1 @@
+npm ci && cd client/app && npm ci && cd ../../server/app && npm ci
