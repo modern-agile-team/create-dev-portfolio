@@ -1,1 +1,1 @@
-docker-compose -f ./server/docker-compose.yml up -d && npx pm2 start 'npm run start:client'
+npm run build --prefix ./server/app && docker-compose -f ./server/docker-compose.yml --env-file ./config/.server.env up -d && npm run start:client

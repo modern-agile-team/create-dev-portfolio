@@ -1,1 +1,1 @@
-env-cmd -f ./config/.client.env npm start --prefix ./client/app
+env-cmd -f ./config/.client.env npx pm2 start --name client-dev-portfolio 'npm start --prefix ./client/app'

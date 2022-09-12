@@ -1,1 +1,1 @@
-docker-compose -f ./server/docker-compose.yml up -d
+npm run build --prefix ./server/app && docker-compose -f ./server/docker-compose.yml --env-file ./config/.server.env up -d
