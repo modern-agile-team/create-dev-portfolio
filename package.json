@@ -8,7 +8,7 @@
     "start:server": "docker-compose -f ./server/docker-compose.yml up -d",
     "start:client": "env-cmd -f ./config/.client.env npm start --prefix ./client/app",
     "exit:all": "docker-compose -f ./server/docker-compose.yml down && npx pm2 delete all",
-    "bootstrap": "cd client && npm ci && cd ../server/app && npm ci"
+    "bootstrap": "cd client/app && npm ci && cd ../../server/app && npm ci"
   },
   "repository": {
     "type": "git",
