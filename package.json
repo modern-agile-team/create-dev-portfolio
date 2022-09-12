@@ -8,7 +8,8 @@
     "start:server": "bash ./scripts/start-server.sh",
     "start:client": "bash ./scripts/start-client.sh",
     "exit:all": "bash ./scripts/exit-all.sh",
-    "bootstrap": "bash ./scripts/update-packages.sh"
+    "bootstrap": "bash ./scripts/install-dependencies.sh",
+    "start:windows": "cd ./server/app && tsc && copy swagger.yaml build && docker-compose -f ./server/docker-compose.yml --env-file ./config/.server.env up -d && env-cmd -f ./config/.client.env npm start --prefix ./client/app"
   },
   "repository": {
     "type": "git",
