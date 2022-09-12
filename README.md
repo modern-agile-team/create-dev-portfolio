@@ -21,20 +21,7 @@
 $ npx create-dev-portfolio <YOUR_CUSTOMIZED_REPOSITORY_NAME>
 ```
 
-2. Modify files called ```.*.env``` to execute.  
-By default, it works normally without modification.
-
-```bash
-# Move to dev-portfolio folder.
-$ cd dev-portfolio
-
-# Customize the .*.env file as you.
-$ vi ./config/.client.env
-$ vi ./config/.server.env
-$ vi ./config/.docker.env
-```
-
-3. Run ```dev-portfolio``` by daemon.
+2. Run ```dev-portfolio``` by daemon.
 
 ```bash
 $ npm run start:all
@@ -48,7 +35,24 @@ $ npm run exit:all
 
 ---
 
+## Tip
+Customize files called ```.*.env```.  
+By default, it works normally without modification.
+
+```bash
+# Move to dev-portfolio folder.
+$ cd dev-portfolio
+
+# Customize the .*.env file as you.
+$ vi ./config/.client.env
+$ vi ./config/.server.env
+```
+
+---
+
 ## Swagger API
+<img width="1450" alt="스크린샷 2022-09-12 오후 9 14 15" src="https://user-images.githubusercontent.com/56839474/189650561-5ba9c467-b52c-48e6-b3e7-30813954e12d.png">  
+
 You can view server apis very easily by using the Swagger documentation.  
 To use the swagger, the ```dev-portfolio``` server must be in a working state.  
 
@@ -57,3 +61,5 @@ If the server is up, go to the link below.
 ```bash
 http://localhost:<YOUR_SERVER_PORT>/swagger
 ```
+
+
