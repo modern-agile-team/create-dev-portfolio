@@ -71,4 +71,5 @@ http://localhost:<YOUR_SERVER_PORT>/swagger
 ## Infra Structure
 <img width="1028" alt="스크린샷 2022-09-15 오후 9 48 37" src="https://user-images.githubusercontent.com/79014269/193828681-5d198fd9-9006-4713-a69b-ce576c58b442.png">
 
+---
 
