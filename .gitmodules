@@ -1,6 +1,0 @@
-[submodule "client"]
-	path = client
-	url = https://github.com/modern-agile-team/dev-portfolio-app
-[submodule "server"]
-	path = server
-	url = https://github.com/modern-agile-team/dev-portfolio-backend-auto-set
