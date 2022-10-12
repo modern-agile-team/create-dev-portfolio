@@ -4,6 +4,10 @@ import VisitorRepository from '../../model/visitorRepository';
 import { BadRequestError } from '../../service/error';
 import errorResposne from '../module/error';
 
+/**
+ * @method patch
+ * @description url - /apis/visitor/count
+ */
 const updateAndGetVisitor = async (req: Request, res: Response) => {
   try {
     const visitor = new Visitor(new VisitorRepository());
@@ -16,6 +20,10 @@ const updateAndGetVisitor = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * @method post
+ * @description url - /apis/visitor/comment
+ */
 const createVisitComment = async (req: Request, res: Response) => {
   const RequestVisitorComment = Object.assign(req.body);
 
@@ -38,6 +46,10 @@ const createVisitComment = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * @method patch
+ * @description url - /apis/visitor/comment/{id}
+ */
 const updateVisitCommentById = async (req: Request, res: Response) => {
   const { id: visitorCommentId } = req.params;
 
@@ -56,6 +68,10 @@ const updateVisitCommentById = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * @method get
+ * @description url - /apis/visitor/comments
+ */
 const getVisitorComments = async (req: Request, res: Response) => {
   try {
     const visitor = new Visitor(new VisitorRepository());
@@ -68,6 +84,10 @@ const getVisitorComments = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * @method delete
+ * @description url - /apis/visitor/comment/{id}
+ */
 const deleteVisitorCommentById = async (req: Request, res: Response) => {
   try {
     const visitorCommentId = req.params.id;
