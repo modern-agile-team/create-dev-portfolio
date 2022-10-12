@@ -24,7 +24,6 @@ If you want to check the dev-portfolio library, please refer to the following li
   * <a href="Database-ERD">Database ERD</a>
   * <a href="example">Example</a>
 
----
 
 ## Recommended systems
 
@@ -43,7 +42,6 @@ If you want to check the dev-portfolio library, please refer to the following li
   1.  Click [here](https://docs.docker.com/get-docker/) to install Docker.
   2.  Click [here](https://docs.docker.com/compose/install/) to install Docker Compose.
 
----
 
 ## Run
 
@@ -90,7 +88,6 @@ $ npm run deploy:client
 
 [vercel](https://vercel.com/)
 
----
 
 ## Tip
 1. **If you want to customize your client.  
@@ -111,7 +108,6 @@ By default, it works normally without modification.
     $ vi ./config/.server.env
     ```
 
----
 
 ## Refers
 
