@@ -24,6 +24,8 @@ If you want to check the dev-portfolio library, please refer to the following li
   * <a href="Database-ERD">Database ERD</a>
   * <a href="example">Example</a>
 
+---
+
 ## Recommended systems
 
 **Operating System**: Linux & MacOS
@@ -40,6 +42,8 @@ If you want to check the dev-portfolio library, please refer to the following li
   > If **mac** and **windows** have **docker desktop** installed, **docker compose** is also installed, so there is no need to install it separately.
   1.  Click [here](https://docs.docker.com/get-docker/) to install Docker.
   2.  Click [here](https://docs.docker.com/compose/install/) to install Docker Compose.
+
+---
 
 ## Run
 
@@ -76,6 +80,17 @@ $ npm run exit:client
 $ npm run exit:server
 ```
 
+## Deploy
+
+```bash
+# After complete client code, then enter the command below.
+# If you enter this, client will be deployed with vercel automatically.  
+$ npm run deploy:client
+```
+
+[vercel](https://vercel.com/)
+
+---
 
 ## Tip
 1. **If you want to customize your client.  
@@ -95,6 +110,8 @@ By default, it works normally without modification.
     $ vi ./config/.client.env
     $ vi ./config/.server.env
     ```
+
+---
 
 ## Refers
 
