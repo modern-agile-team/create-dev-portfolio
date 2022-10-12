@@ -125,6 +125,10 @@ http://localhost:<YOUR_SERVER_PORT>/swagger
 ### Infra Structure
 <img width="1028" alt="스크린샷 2022-09-15 오후 9 48 37" src="https://user-images.githubusercontent.com/79014269/193828681-5d198fd9-9006-4713-a69b-ce576c58b442.png">
 
+### Database ERD
+
+<img width="539" alt="스크린샷 2022-10-12 오전 12 33 55" src="https://user-images.githubusercontent.com/79014269/195138130-56656777-4440-426d-a88e-67c029cf5175.png">
+
 ### Example
 
 1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> https://dev-portfolio-app.vercel.app/
