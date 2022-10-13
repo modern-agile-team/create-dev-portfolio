@@ -1,7 +1,7 @@
 import { VisitorCmtDto, VisitorCmtEntity } from '../apis/visitor/visitor';
 import VisitorRepository from '../model/visitorRepository';
 import bcrypt from 'bcrypt';
-import { BadRequestError, NotFoundError, ServerError } from './error';
+import { NotFoundError, ServerError } from './error';
 import moment from 'moment';
 
 interface Response {
