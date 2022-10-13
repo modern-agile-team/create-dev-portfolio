@@ -8,7 +8,7 @@ interface ValidationErrorItem {
 }
 
 /**
- * 
+ * @description Validation logic for request
  * @param {Request} req 
  * @param {Response} res 
  * @param {NextFunction} next 
