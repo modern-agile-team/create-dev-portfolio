@@ -9,6 +9,11 @@ interface Response {
   msg: string;
 }
 
+/**
+ * @constructor
+ * @param {VisitorRepository} visitorRepository
+ * @param {any=} body
+ */
 class Visitor {
   private readonly visitorRepository: VisitorRepository;
   readonly body;
