@@ -7,6 +7,13 @@ interface ValidationErrorItem {
   constraints?: object;
 }
 
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ * @param {NextFunction} next 
+ * @returns
+ */
 async function validationCheck(
   req: Request,
   res: Response,
