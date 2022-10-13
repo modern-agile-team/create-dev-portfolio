@@ -20,7 +20,10 @@ If you want to check the dev-portfolio library, please refer to the following li
 * <a href="refers">Refers</a>
   * <a href="license">License</a>
   * <a href="contributor">Contributor</a>
+  * <a href="Infra-Structure">Infra Structure</a>
+  * <a href="Database-ERD">Database ERD</a>
   * <a href="example">Example</a>
+
 
 ## Recommended systems
 
@@ -38,6 +41,7 @@ If you want to check the dev-portfolio library, please refer to the following li
   > If **mac** and **windows** have **docker desktop** installed, **docker compose** is also installed, so there is no need to install it separately.
   1.  Click [here](https://docs.docker.com/get-docker/) to install Docker.
   2.  Click [here](https://docs.docker.com/compose/install/) to install Docker Compose.
+
 
 ## Run
 
@@ -74,7 +78,16 @@ $ npm run exit:client
 $ npm run exit:server
 ```
 
----
+## Deploy
+
+```bash
+# After complete client code, then enter the command below.
+# If you enter this, client will be deployed with vercel automatically.  
+$ npm run deploy:client
+```
+
+[vercel](https://vercel.com/)
+
 
 ## Tip
 1. **If you want to customize your client.  
@@ -95,20 +108,17 @@ By default, it works normally without modification.
     $ vi ./config/.server.env
     ```
 
-## License
 
+## Refers
+
+### License
 [MIT](https://github.com/modern-agile-team/create-dev-portfolio/blob/master/LICENSE)
 
-## Contributor
-
+### Contributor
 - [seohyunsim](https://github.com/seohyunsim)
 - [soonki-98](https://github.com/soonki-98)
 - [jisu3817](https://github.com/jisu3817)
 - [woorim960](https://github.com/woorim960)
-
----
-
-## Refers
 
 ### Swagger API
 <img width="1450" alt="스크린샷 2022-09-12 오후 9 14 15" src="https://user-images.githubusercontent.com/56839474/189650561-5ba9c467-b52c-48e6-b3e7-30813954e12d.png">  
@@ -124,6 +134,10 @@ http://localhost:<YOUR_SERVER_PORT>/swagger
 
 ### Infra Structure
 <img width="1028" alt="스크린샷 2022-09-15 오후 9 48 37" src="https://user-images.githubusercontent.com/79014269/193828681-5d198fd9-9006-4713-a69b-ce576c58b442.png">
+
+### Database ERD
+
+<img width="539" alt="스크린샷 2022-10-12 오전 12 33 55" src="https://user-images.githubusercontent.com/79014269/195138130-56656777-4440-426d-a88e-67c029cf5175.png">
 
 ### Example
 
