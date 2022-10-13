@@ -1,3 +1,5 @@
+const { REACT_APP_HOST_ADDRESS, REACT_APP_SERVER_PORT } = process.env;
+
 export class HTTP {
   private domain: string = "";
 
@@ -40,6 +42,8 @@ export class HTTP {
   }
 }
 
-const instance = new HTTP("http://localhost:8000");
+const instance = new HTTP(
+  `http://${REACT_APP_HOST_ADDRESS}:${REACT_APP_SERVER_PORT}`
+);
 
 export default instance;
