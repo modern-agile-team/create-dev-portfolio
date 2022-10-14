@@ -40,9 +40,9 @@ If you want to check the dev-portfolio library, please refer to the following li
      > If **mac** and **windows** have **docker desktop** installed, **docker compose** is also installed, so there is no need to install it separately.
      1. Click [here](https://docs.docker.com/get-docker/) to install Docker.
      2. Click [here](https://docs.docker.com/compose/install/) to install Docker Compose.
-3. **node** ≥ `v14.20.1`
+3. **node** ≥ `v16.18.0`
    - Using nvm, you can easily change the node version. Please refer to the following: [NVM](https://www.notion.so/NVM-53c04d5c8837480e8601e6bd39abc62a#6db02c02a5c549cbaaa7884cac709a9e)
-4. **npm** ≥ `v6.14.17`
+4. **npm** ≥ `v8.19.2`
 
 ## Run
 
