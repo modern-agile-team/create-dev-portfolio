@@ -7,7 +7,7 @@ const config = {
   password: process.env.DB_PSWORD,
   database: process.env.DB_DATABASE,
   port: Number(process.env.DB_PORT),
-  connectionLimit: 1000,
+  connectionLimit: 300,
 };
 
 const mysqlPool = mysql.createPool(config);
