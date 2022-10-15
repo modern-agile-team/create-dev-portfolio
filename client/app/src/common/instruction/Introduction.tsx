@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import color from "../style/theme";
 
+/**
+ * Just introduction for dev-portfolio-app.
+ *
+ * If you want to view internal of Introduction,
+ * go to the './src/common/instruction/Introduction.tsx'
+ */
 const Introduction = ({ id }: { id: string }) => {
   return (
     <Wrap id={id}>

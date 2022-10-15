@@ -14,20 +14,21 @@ import {
   VisitorComment,
 } from "dev-portfolio";
 import styled from "styled-components";
+
 import {
   CardInstruction,
   Introduction,
   TeckstackInputInstruction,
   DisplayPortfolioInstruction,
   VisitorCounterInstruction,
+  SkillInstruction,
+  ChannelInstruction,
+  ProgressBarInstruction,
+  ContactInstruction,
 } from "./common";
+import color from "./common/style/theme";
 import useComment from "./hooks/useComment";
 import "./App.css";
-import color from "./common/style/theme";
-import { SkillInstruction } from "./common/instruction/SkillInstruction";
-import { ChannelInstruction } from "./common/instruction/ChannelInstruction";
-import { ProgressBarInstruction } from "./common/instruction/ProgressBarInstruction";
-import { ContactInstruction } from "./common/instruction/ContactInstruction";
 
 function App() {
   /**
@@ -47,7 +48,6 @@ function App() {
     handleCreateComment,
   } = useComment();
 
-  const itemList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     /**
      * The 'className' in the <div> tag surrounding the components of 'dev-portfolio' must be 'App'.
@@ -102,7 +102,7 @@ function App() {
       {/**
        * Just introduction for dev-portfolio-app.
        *
-       * If you want view internal of Introduction,
+       * If you want to view internal of Introduction,
        * go to the './src/common/instruction/Introduction.tsx'
        */}
       <Introduction id="['Manual Introduction', 'bx:home-smile']" />
@@ -119,14 +119,19 @@ function App() {
       />
 
       {/**
-       * TechStackInput used only to find the logoName value in the TechStackList.
-       * @component TechStackInput
-       * {@link none}
+       * Just introduction for TechStackInput component.
        *
-       * If you want view internal of TeckstackInputInstruction,
+       * If you want to view internal of TeckstackInputInstruction,
        * go to the './src/common/instruction/TeckstackInputInstruction.tsx'
        */}
       <TeckstackInputInstruction id="['TechStackInput', 'fa:stack-overflow']" />
+
+      {/**
+       * TechStackInput used only to find the logoName value in the TechStackList.
+       *
+       * @component TechStackInput
+       * {@link none}
+       */}
       <TechStackInput />
 
       {/**
@@ -189,14 +194,28 @@ function App() {
         ]}
       />
 
+      {/**
+       * @component ProgressBar
+       * {@link https://github.com/modern-agile-team/dev-portfolio#progressbar}
+       *
+       * If you want to view ProgressBar component,
+       * go to the './src/common/instruction/ProgressBarInstruction.tsx'
+       */}
       <ProgressBarInstruction id="['ProgressBar', 'ci:bar-chart-horizontal']" />
 
+      {/**
+       * @component Skill
+       * {@link https://github.com/modern-agile-team/dev-portfolio#skill}
+       *
+       * If you want to view Skill component,
+       * go to the './src/common/instruction/SkillInstruction.tsx'
+       */}
       <SkillInstruction id="['Skill', 'charm:stack']" />
 
       {/**
        * Just introduction for Carousel, Gallery and Masonry.
        *
-       * If you want view internal of DisplayPortfolioInstruction,
+       * If you want to view internal of DisplayPortfolioInstruction,
        * go to the './src/common/instruction/DisplayPortfolioInstruction.tsx'
        */}
       <DisplayPortfolioInstruction />
@@ -218,7 +237,7 @@ function App() {
        * {@link https://github.com/modern-agile-team/dev-portfolio#gallery}
        */}
       <Gallery id="['Gallery', 'clarity:image-gallery-line']">
-        {itemList.map((idx) => (
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
           <Item
             key={idx}
             hoverdInnerBorderColor={color.mainColor}
@@ -251,7 +270,7 @@ function App() {
        * @component VisitorCounter
        * {@link https://github.com/modern-agile-team/dev-portfolio#visitorcounter}
        *
-       * If you want view Card component,
+       * If you want to view Card component,
        * go to the './src/common/instruction/VisitorCounterInstruction.tsx'
        */}
       <VisitorCounterInstruction id="['VisitorCounter', 'mdi:counter']" />
@@ -283,7 +302,7 @@ function App() {
        * @component Card
        * {@link https://github.com/modern-agile-team/dev-portfolio#card}
        *
-       * If you want view Card component,
+       * If you want to view Card component,
        * go to the './src/common/instruction/CardInstruction.tsx'
        */}
       <CardInstruction id="['Card', 'bi:card-list']" />
@@ -294,13 +313,30 @@ function App() {
        */}
       <Experience id="['Experience', 'carbon:list-boxes']" theme="vertical" />
 
+      {/**
+       * @component Channel
+       * {@link https://github.com/modern-agile-team/dev-portfolio#channel}
+       *
+       * @component Channels
+       * {@link https://github.com/modern-agile-team/dev-portfolio#channels}
+       *
+       * If you want to view Channel and Channels component,
+       * go to the './src/common/instruction/ChannelInstruction.tsx'
+       */}
       <ChannelInstruction id="['Channel', 'fluent:channel-48-filled']" />
+
+      {/**
+       * Just introduction for Contact.
+       *
+       * If you want to view internal of ContactInstruction,
+       * go to the './src/common/instruction/ContactInstruction.tsx'
+       */}
+      <ContactInstruction />
+
       {/**
        * @component Contact
        * {@link https://github.com/modern-agile-team/dev-portfolio#contact}
        */}
-
-      <ContactInstruction />
       <Contact
         id="['Contact', 'fluent:contact-card-20-regular']"
         titleColor={color.pointColor}
