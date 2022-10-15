@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+/**
+ * TechStackInput used only to find the logoName value in the TechStackList.
+ * @component TechStackInput
+ * {@link none}
+ *
+ * If you want to view internal of TeckstackInputInstruction,
+ * go to the './src/common/instruction/TeckstackInputInstruction.tsx'
+ */
 const TeckstackInputInstruction = ({ id }: { id: string }) => {
   return (
     <Wrap id={id}>

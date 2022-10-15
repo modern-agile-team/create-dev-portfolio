@@ -3,7 +3,17 @@ import React from "react";
 import styled from "styled-components";
 import color from "../style/theme";
 
-export const ChannelInstruction = ({ id }: { id: string }) => {
+/**
+ * @component Channel
+ * {@link https://github.com/modern-agile-team/dev-portfolio#channel}
+ *
+ * @component Channels
+ * {@link https://github.com/modern-agile-team/dev-portfolio#channels}
+ *
+ * If you want to view Channel and Channels component,
+ * go to the './src/common/instruction/ChannelInstruction.tsx'
+ */
+const ChannelInstruction = ({ id }: { id: string }) => {
   return (
     <Wrap id={id}>
       <h1>Channel &amp; Channels</h1>
@@ -29,6 +39,8 @@ export const ChannelInstruction = ({ id }: { id: string }) => {
     </Wrap>
   );
 };
+
+export default ChannelInstruction;
 
 const Wrap = styled.div`
   padding: 1em 2.2em 0em 2.2em;

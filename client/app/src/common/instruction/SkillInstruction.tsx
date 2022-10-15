@@ -2,7 +2,14 @@ import { Skill } from "dev-portfolio";
 import React from "react";
 import styled from "styled-components";
 
-export const SkillInstruction = ({ id }: { id: string }) => {
+/**
+ * @component Skill
+ * {@link https://github.com/modern-agile-team/dev-portfolio#skill}
+ *
+ * If you want to view Skill component,
+ * go to the './src/common/instruction/SkillInstruction.tsx'
+ */
+const SkillInstruction = ({ id }: { id: string }) => {
   return (
     <Wrap id={id}>
       <h1>Skill</h1>
@@ -25,6 +32,8 @@ export const SkillInstruction = ({ id }: { id: string }) => {
     </Wrap>
   );
 };
+
+export default SkillInstruction;
 
 const Wrap = styled.div`
   padding: 1em 2.2em 5em 2.2em;

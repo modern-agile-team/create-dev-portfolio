@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export const ContactInstruction = () => {
+/**
+ * Just introduction for Contact.
+ *
+ * If you want to view internal of ContactInstruction,
+ * go to the './src/common/instruction/ContactInstruction.tsx'
+ */
+const ContactInstruction = () => {
   return (
     <Wrap>
       <h1>Contact</h1>
@@ -16,6 +22,8 @@ export const ContactInstruction = () => {
     </Wrap>
   );
 };
+
+export default ContactInstruction;
 
 const Wrap = styled.div`
   padding: 3em 2.2em 2em 2.2em;
