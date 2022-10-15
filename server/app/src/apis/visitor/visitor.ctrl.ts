@@ -5,7 +5,7 @@ import { BadRequestError } from '../../service/error';
 import errorResposne from '../module/error';
 
 /**
- * @method patch - /apis/visitor/count
+ * @method patch /apis/visitor/count
  */
 const updateAndGetVisitor = async (req: Request, res: Response) => {
   try {
@@ -20,32 +20,34 @@ const updateAndGetVisitor = async (req: Request, res: Response) => {
 };
 
 /**
- * @method post - /apis/visitor/comment
+ * @method post /apis/visitor/comment
  */
 const createVisitComment = async (req: Request, res: Response) => {
   const RequestVisitorComment = Object.assign(req.body);
 
   try {
-    if (RequestVisitorComment.nickname?.length === 0)
+    if (RequestVisitorComment.nickname?.length === 0) {
       req.body.nickname = '익명';
+    }
 
     const visitor = new Visitor(new VisitorRepository(), RequestVisitorComment);
 
     const response = await visitor.createComment();
 
-    if (response)
+    if (response) {
       return res.status(201).json({
         statusCode: 201,
         commentId: response,
         msg: 'Successful visitor comment creation',
       });
+    }
   } catch (err) {
     return errorResposne(err, res);
   }
 };
 
 /**
- * @method patch - /apis/visitor/comment/{id}
+ * @method patch /apis/visitor/comment/{id}
  */
 const updateVisitCommentById = async (req: Request, res: Response) => {
   const { id: visitorCommentId } = req.params;
@@ -57,8 +59,9 @@ const updateVisitCommentById = async (req: Request, res: Response) => {
 
     const response = await visitor.updateCommentById(Number(visitorCommentId));
 
-    if (!response.success)
+    if (!response.success) {
       return res.status(401).json({ statusCode: 401, msg: response.msg });
+    }
     return res.status(200).json({ statusCode: 200, msg: response.msg });
   } catch (err) {
     return errorResposne(err, res);
@@ -66,7 +69,7 @@ const updateVisitCommentById = async (req: Request, res: Response) => {
 };
 
 /**
- * @method get - /apis/visitor/comments
+ * @method get /apis/visitor/comments
  */
 const getVisitorComments = async (req: Request, res: Response) => {
   try {
@@ -81,25 +84,27 @@ const getVisitorComments = async (req: Request, res: Response) => {
 };
 
 /**
- * @method delete - /apis/visitor/comment/{id}
+ * @method delete /apis/visitor/comment/{id}
  */
 const deleteVisitorCommentById = async (req: Request, res: Response) => {
   try {
     const visitorCommentId = req.params.id;
 
-    if (!visitorCommentId) throw new BadRequestError('id params is undefined');
-
+    if (!visitorCommentId) {
+      throw new BadRequestError('id params is undefined');
+    }
     const visitor = new Visitor(new VisitorRepository());
 
     const response = await visitor.deleteVisitorCommentById(
       Number(visitorCommentId)
     );
 
-    if (response)
+    if (response) {
       return res.status(200).json({
         statusCode: 200,
         msg: 'Successful deletion of visitor comment',
       });
+    }
   } catch (err) {
     return errorResposne(err, res);
   }
