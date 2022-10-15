@@ -1,5 +1,8 @@
 import { IsOptional, Length } from 'class-validator';
 
+/**
+ * @description class for validation
+ */
 class VisitorCommentValidator {
   @IsOptional()
   @Length(0, 20)
