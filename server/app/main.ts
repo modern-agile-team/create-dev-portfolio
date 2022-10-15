@@ -9,13 +9,15 @@ dotenv.config({ path: '../../config/.server.env' });
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const HOST_ADDRESS = process.env.HOST_ADDRESS || 'localhost'
+const HOST_ADDRESS =
+  process.env.NODE_ENV === 'production'
+    ? process.env.HOST_ADDRESS || 'localhost'
+    : 'localhost';
 
 const swaggerSpec = YAML.load(path.join(__dirname, './swagger.yaml'));
-const portInjectedSwaggerSpec = JSON.stringify(swaggerSpec).replace(
-  '{PORT}',
-  PORT.toString()
-).replace('{HOST_ADDRESS}', HOST_ADDRESS);
+const portInjectedSwaggerSpec = JSON.stringify(swaggerSpec)
+  .replace('{PORT}', PORT.toString())
+  .replace('{HOST_ADDRESS}', HOST_ADDRESS);
 
 import visitor from './src/apis/visitor';
 
