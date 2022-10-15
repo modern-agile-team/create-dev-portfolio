@@ -1,11 +1,23 @@
 import { Request, Response } from 'express';
 import Visitor from '../../service/visitor';
 import VisitorRepository from '../../model/visitorRepository';
-import { BadRequestError } from '../../service/error';
+import { BadRequestError, ServerError } from '../../service/error';
 import errorResposne from '../module/error';
+import { VisitorCmtDto, VisitorCmtEntity } from './visitor';
 
 /**
- * @method patch /apis/visitor/count
+ * @typedef {Object} ResBody
+ * @property {number} statusCode
+ * @property {number} todayCount
+ * @property {number} totalCount
+ * @property {string} todayDate
+ */
+
+/**
+ * api description
+ * @url /apis/visitor/count
+ * @method patch
+ * @prooperty {ResBody} res.body
  */
 const updateAndGetVisitor = async (req: Request, res: Response) => {
   try {
@@ -20,10 +32,21 @@ const updateAndGetVisitor = async (req: Request, res: Response) => {
 };
 
 /**
- * @method post /apis/visitor/comment
+ * @typedef {Object} ResBody
+ * @property {number} statusCode
+ * @property {number} commentId
+ * @property {string} msg
+ */
+
+/**
+ * api description
+ * @url /apis/visitor/comment
+ * @method post
+ * @property {VisitorCmtDto} req.body
+ * @returns {Promise<Response<ResBody>>}
  */
 const createVisitComment = async (req: Request, res: Response) => {
-  const RequestVisitorComment = Object.assign(req.body);
+  const RequestVisitorComment: VisitorCmtDto = Object.assign(req.body);
 
   try {
     if (RequestVisitorComment.nickname?.length === 0) {
@@ -41,13 +64,24 @@ const createVisitComment = async (req: Request, res: Response) => {
         msg: 'Successful visitor comment creation',
       });
     }
+    throw new ServerError('Interver Server Error')
   } catch (err) {
     return errorResposne(err, res);
   }
 };
 
 /**
- * @method patch /apis/visitor/comment/{id}
+ * @typedef {Object} ResBody
+ * @property {number} statusCode
+ * @property {string} msg
+ */
+
+/**
+ * api description
+ * @url /apis/visitor/comment/{id}
+ * @method patch
+ * @param {VisitorCmtDto} req.body
+ * @returns {Promise<Response<ResBody>>}
  */
 const updateVisitCommentById = async (req: Request, res: Response) => {
   const { id: visitorCommentId } = req.params;
@@ -69,7 +103,10 @@ const updateVisitCommentById = async (req: Request, res: Response) => {
 };
 
 /**
- * @method get /apis/visitor/comments
+ * api description
+ * @url /apis/visitor/comments
+ * @method get
+ * @returns {Promise<Response<VisitorCmtEntity>>}
  */
 const getVisitorComments = async (req: Request, res: Response) => {
   try {
@@ -84,7 +121,16 @@ const getVisitorComments = async (req: Request, res: Response) => {
 };
 
 /**
- * @method delete /apis/visitor/comment/{id}
+ * @typedef {Object} ResBody
+ * @property {number} statusCode
+ * @property {string} msg
+ */
+
+/**
+ * api description
+ * @url /apis/visitor/comment/{id}
+ * @method delete
+ * @returns {Promise<Response<ResBody>>}
  */
 const deleteVisitorCommentById = async (req: Request, res: Response) => {
   try {
