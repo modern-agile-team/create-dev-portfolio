@@ -3,7 +3,14 @@ import React from "react";
 import styled from "styled-components";
 import color from "../../common/style/theme";
 
-export const ProgressBarInstruction = ({ id }: { id: string }) => {
+/**
+ * @component ProgressBar
+ * {@link https://github.com/modern-agile-team/dev-portfolio#progressbar}
+ *
+ * If you want to view ProgressBar component,
+ * go to the './src/common/instruction/ProgressBarInstruction.tsx'
+ */
+const ProgressBarInstruction = ({ id }: { id: string }) => {
   return (
     <Wrap id={id}>
       <h1>ProgressBar</h1>
@@ -25,6 +32,8 @@ export const ProgressBarInstruction = ({ id }: { id: string }) => {
     </Wrap>
   );
 };
+
+export default ProgressBarInstruction;
 
 const Wrap = styled.div`
   padding: 1em 2.2em 2em 2.2em;
