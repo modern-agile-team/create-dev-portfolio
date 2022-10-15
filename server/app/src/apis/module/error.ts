@@ -6,10 +6,16 @@ import {
 import { Response } from 'express';
 
 /**
+ * @typedef {Object} ErrorResponse
+ * @property {number} statusCode error code
+ * @property {msg} msg error message
+ */
+
+/**
  * @description Response branch processing logic for each error code
- * @param {unknown | ServerError | BadRequestError | NotFoundError} err 
- * @param {Response} res 
- * @returns 
+ * @param {unknown | ServerError | BadRequestError | NotFoundError} err error types
+ * @param {Response} res
+ * @returns {Response<ErrorResponse>} res
  */
 function errorResposne(
   err: unknown | ServerError | BadRequestError | NotFoundError,
