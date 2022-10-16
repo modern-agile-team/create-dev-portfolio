@@ -135,7 +135,7 @@ http://localhost:<YOUR_SERVER_PORT>/swagger
 
 ### Example
 
-1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> https://dev-portfolio-app.vercel.app/
+1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> http://52.78.64.144
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/194718430-5404fa1f-c24b-48a0-8730-15db2d3bde00.gif)
 
