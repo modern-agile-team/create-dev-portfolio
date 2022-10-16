@@ -13,18 +13,18 @@ If you want to check the dev-portfolio library, please refer to the following li
 
 ## List
 
-- <a href="recommended-systems">Recommended systems</a>
-- <a href="run">Run</a>
-- <a href="exit">Exit</a>
-- <a href="deploy">Deploy</a>
-- <a href="tip">Tip</a>
-- <a href="refers">Refers</a>
-  - <a href="swagger-api">Swagger API</a>
-  - <a href="Infra-Structure">Infra Structure</a>
-  - <a href="Database-ERD">Database ERD</a>
-  - <a href="example">Example</a>
-- <a href="license">License</a>
-- <a href="contributor">Contributor</a>
+- <a href="#recommended-systems">Recommended systems</a>
+- <a href="#run">Run</a>
+- <a href="#exit">Exit</a>
+- <a href="#deploy">Deploy</a>
+- <a href="#tip">Tip</a>
+- <a href="#refers">Refers</a>
+  - <a href="#swagger-api">Swagger API</a>
+  - <a href="#infra-structure">Infra Structure</a>
+  - <a href="#database-erd">Database ERD</a>
+  - <a href="#example">Example</a>
+- <a href="#license">License</a>
+- <a href="#contributor">Contributor</a>
 
 ## Recommended systems
 
@@ -135,7 +135,7 @@ http://localhost:<YOUR_SERVER_PORT>/swagger
 
 ### Example
 
-1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> https://dev-portfolio-app.vercel.app/
+1. <[dev-portfolio-app](https://github.com/modern-agile-team/dev-portfolio-app)> http://52.78.64.144
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56839474/194718430-5404fa1f-c24b-48a0-8730-15db2d3bde00.gif)
 
