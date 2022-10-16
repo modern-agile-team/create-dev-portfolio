@@ -13,18 +13,18 @@ If you want to check the dev-portfolio library, please refer to the following li
 
 ## List
 
-- <a href="recommended-systems">Recommended systems</a>
-- <a href="run">Run</a>
-- <a href="exit">Exit</a>
-- <a href="deploy">Deploy</a>
-- <a href="tip">Tip</a>
-- <a href="refers">Refers</a>
-  - <a href="swagger-api">Swagger API</a>
-  - <a href="Infra-Structure">Infra Structure</a>
-  - <a href="Database-ERD">Database ERD</a>
-  - <a href="example">Example</a>
-- <a href="license">License</a>
-- <a href="contributor">Contributor</a>
+- <a href="#recommended-systems">Recommended systems</a>
+- <a href="#run">Run</a>
+- <a href="#exit">Exit</a>
+- <a href="#deploy">Deploy</a>
+- <a href="#tip">Tip</a>
+- <a href="#refers">Refers</a>
+  - <a href="#swagger-api">Swagger API</a>
+  - <a href="#infra-structure">Infra Structure</a>
+  - <a href="#database-erd">Database ERD</a>
+  - <a href="#example">Example</a>
+- <a href="#license">License</a>
+- <a href="#contributor">Contributor</a>
 
 ## Recommended systems
 
