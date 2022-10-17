@@ -3,21 +3,15 @@ import Visitor from '../../service/visitor';
 import VisitorRepository from '../../model/visitorRepository';
 import { BadRequestError, ServerError } from '../../service/error';
 import errorResposne from '../module/error';
-import { VisitorCmtDto, VisitorCmtEntity } from './visitor';
+import { VisitorCmtDto } from './visitor';
 
 /**
- * @typedef {Object} ResBody
- * @property {number} statusCode
- * @property {number} todayCount
- * @property {number} totalCount
- * @property {string} todayDate
- */
-
-/**
- * api description
+ * Visitor increase and lookup API
  * @url /apis/visitor/count
  * @method patch
- * @prooperty {ResBody} res.body
+ * @resBody `{ statusCode: number, todayCount: number, totalCount: number, todayDate: string }` 
+ * success response body
+ * @resBody `{ statusCode: number, msg: string }` fail response body
  */
 const updateAndGetVisitor = async (req: Request, res: Response) => {
   try {
@@ -32,18 +26,12 @@ const updateAndGetVisitor = async (req: Request, res: Response) => {
 };
 
 /**
- * @typedef {Object} ResBody
- * @property {number} statusCode
- * @property {number} commentId
- * @property {string} msg
- */
-
-/**
- * api description
+ * Visit comment generation API
  * @url /apis/visitor/comment
  * @method post
- * @property {VisitorCmtDto} req.body
- * @returns {Promise<Response<ResBody>>}
+ * @reqBody `{ nickname: string, password: string, description: string }`
+ * @resBody `{ statusCode: number, commendId: number, msg: string }` success response body
+ * @resBody `{ statusCode: number, msg: string }` fail response body
  */
 const createVisitComment = async (req: Request, res: Response) => {
   const RequestVisitorComment: VisitorCmtDto = Object.assign(req.body);
@@ -71,22 +59,17 @@ const createVisitComment = async (req: Request, res: Response) => {
 };
 
 /**
- * @typedef {Object} ResBody
- * @property {number} statusCode
- * @property {string} msg
- */
-
-/**
- * api description
- * @url /apis/visitor/comment/{id}
+ * API for editing visited comments
+ * @url /apis/visitor/comment/:id
  * @method patch
- * @param {VisitorCmtDto} req.body
- * @returns {Promise<Response<ResBody>>}
+ * @reqParams `{ id: number }` Unique number of edit comment
+ * @reqBody `{ password: string, description: string }`
+ * @resBody `{ statusCode: number, msg: string }` success or fail response body
  */
 const updateVisitCommentById = async (req: Request, res: Response) => {
   const { id: visitorCommentId } = req.params;
 
-  const requestVisitorComment = Object.assign(req.body);
+  const requestVisitorComment: VisitorCmtDto = Object.assign(req.body);
 
   try {
     const visitor = new Visitor(new VisitorRepository(), requestVisitorComment);
@@ -103,18 +86,20 @@ const updateVisitCommentById = async (req: Request, res: Response) => {
 };
 
 /**
- * api description
+ * All visit comment lookup APIs
  * @url /apis/visitor/comments
  * @method get
- * @returns {Promise<Response<VisitorCmtEntity>>}
+ * @resBody `{ statusCode: number, visitorComments: [{id: number, nickname: string,
+  description: string, date: string }] }` success response body
+ * @resBody `{ statusCode: number, mesg: string }` fail response body
  */
 const getVisitorComments = async (req: Request, res: Response) => {
   try {
     const visitor = new Visitor(new VisitorRepository());
 
-    const response = await visitor.getVisitorComments();
+    const { visitorComments } = await visitor.getVisitorComments();
 
-    return res.status(200).json({ statusCode: 200, ...response });
+    return res.status(200).json({ statusCode: 200, visitorComments });
   } catch (err) {
     return errorResposne(err, res);
   }
@@ -127,10 +112,12 @@ const getVisitorComments = async (req: Request, res: Response) => {
  */
 
 /**
- * api description
- * @url /apis/visitor/comment/{id}
+ * Visit comment delete API
+ * @url /apis/visitor/comment/:id
  * @method delete
- * @returns {Promise<Response<ResBody>>}
+ * @reqParams `{ id: number }` Unique ID of the target to be deleted 
+ * @resBody `{ statusCode: number, msg: string }` success response body
+ * @resBody `{ statusCode: number, msg: string }` fail response body
  */
 const deleteVisitorCommentById = async (req: Request, res: Response) => {
   try {
