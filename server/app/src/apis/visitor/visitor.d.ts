@@ -7,7 +7,7 @@ export interface VisitorDto extends RowDataPacket {
 }
 
 export interface VisitorCmtDto {
-  nickname: string;
+  nickname?: string;
   password: string;
   description: string;
 }
