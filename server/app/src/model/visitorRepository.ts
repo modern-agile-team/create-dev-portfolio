@@ -7,7 +7,14 @@ import {
 import db from '../config/db';
 import { ServerError } from '../service/error';
 
+/**
+ * Visitor-related data processing class
+ */
 class VisitorRepository {
+  /**
+   * Today number of visitors and total number of visitors inquiry method
+   * @returns `{ todayCount: number, totalCount: number }`
+   */
   async getVisitorCnt(): Promise<VisitorDto> {
     let conn;
     try {
@@ -28,6 +35,10 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Today's visits and total visits increase method
+   * @returns `boolean` Whether to update
+   */
   async updateTodayVisitorCnt(): Promise<number> {
     let conn;
     try {
@@ -48,6 +59,11 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Inquery today's date for visitor count table
+   * @returns `string` today's date
+   * @example 2022-09-12 00:00:00
+   */
   async getVisitorTodayDate() {
     let conn;
     try {
@@ -66,6 +82,12 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Request date and number of visitors today, total number of visitors update method
+   * @params 
+   * @todayDate `string` today date
+   * @returns `boolean` Whether to update
+   */
   async updateTodayAndToTalVisitorCnt(todayDate: string) {
     let conn;
     try {
@@ -86,6 +108,11 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Visit comment generation method
+   * @params `{ nickname: string, password: string, description: string }`
+   * @returns `number` Unique ID of the updated visit comment
+   */
   async createComment({
     nickname,
     password,
@@ -113,6 +140,11 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Visit comment inquery method for ID
+   * @params `number` Unique ID of the inquery target
+   * @returns `{ id: number, nickname: string, description: string, date: string }`
+   */
   async getVisitorCommentById(
     visitorCommentId: number
   ): Promise<VisitorCmtEntity> {
@@ -132,6 +164,13 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Save visit comment modification method
+   * @params 
+   * @visitorCommentId `number` Unique ID to be modified
+   * @description `string` Modified comments
+   * @returns `boolean` Whether to update
+   */
   async updateVisitorComment(
     visitorCommentId: number,
     description: string
@@ -153,6 +192,10 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * All visit comment inquery method
+   * @returns `[{ id: number, nickname: string, description: string, date: string }]`
+   */
   async getVisitorComments(): Promise<VisitorCmtEntity[]> {
     let conn;
     try {
@@ -170,6 +213,12 @@ class VisitorRepository {
     }
   }
 
+  /**
+   * Delete visiting comments with unique ID method
+   * @params
+   * @id `number` Unique ID for deletion
+   * @returns `boolean` Whether to update
+   */
   async deleteVisitorCommentById(id: number): Promise<number> {
     let conn;
     try {
