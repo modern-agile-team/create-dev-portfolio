@@ -3,11 +3,11 @@ import { RowDataPacket } from 'mysql2';
 export interface VisitorDto extends RowDataPacket {
   todayCount: number;
   totalCount: number;
-  todayDate: string;
+  todayDate?: string;
 }
 
 export interface VisitorCmtDto {
-  nickname: string;
+  nickname?: string;
   password: string;
   description: string;
 }
