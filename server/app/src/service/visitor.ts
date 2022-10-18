@@ -10,11 +10,10 @@ interface Response {
 }
 
 
+/**
+ * Service class for visitors
+ */
 class Visitor {
-  /**
-   * @param {VisitorRepository} visitorRepository
-   * @param {any=} body
-   */
   private readonly visitorRepository: VisitorRepository;
   readonly body;
   constructor(visitorRepository: VisitorRepository, body?: any) {
@@ -23,8 +22,8 @@ class Visitor {
   }
 
   /**
-   * @description Method for retrieving number of visitors
-   * @returns {VisitorDto} visitorCnt
+   * Method for retrieving number of visitors
+   * @returns visitorCnt `{ todayCount: number, totalCount: number }`
    */
   async getVisitorCnt() {
     const visitorCnt = await this.visitorRepository.getVisitorCnt();
@@ -32,8 +31,8 @@ class Visitor {
   }
 
   /**
-   * @description Update the number of visitors every time they visit your portfolio web
-   * @returns {VisitorDto} visitorCnt
+   * Update the number of visitors every time they visit your portfolio web
+   * @returns visitorCnt `{ todayCount: number, totalCount: number }`
    */
   async updateAndGetVisitorCnt() {
     const todayDate = await this.visitorRepository.getVisitorTodayDate();
@@ -59,7 +58,8 @@ class Visitor {
   }
 
   /**
-   * @description Create visitor comment information
+   * Create visitor comment information
+   * @returns Promise to return a unique ID for the generated visit comment of the string type
    */
   async createComment(): Promise<number> {
     const { body } = this;
@@ -82,9 +82,9 @@ class Visitor {
   }
 
   /**
-   * @description Method for password encryption
-   * @param {string} password
-   * @returns {Promise<string>}
+   * Method for password encryption
+   * @param password String type as value before encryption
+   * @returns Encrypt password to return a promise of string type
    */
   private async encryptPassword(password: string): Promise<string> {
     const saltRounds = 10;
@@ -99,8 +99,11 @@ class Visitor {
   }
 
   /**
-   * @param {number} visitorCommentId update target id
-   * @returns {Promise<Response>}
+   * Visit comment update method
+   * @param visitorCommentId Unique ID for modification of number type
+   * @returns `{ success: boolean, msg: string }`
+   * The password matches to perform the operation and returns a successful result or a failure result.
+   * Throw error if no data exists for requested id.
    */
   async updateCommentById(visitorCommentId: number): Promise<Response> {
     const { password, description }: VisitorCmtDto = this.body;
@@ -131,17 +134,18 @@ class Visitor {
   }
 
   /**
-   * @param {string} password 
-   * @param {string} encryptedPassword 
-   * @returns {Promise<boolean>} password Verification
+   * Methods to check for matching encrypted passwords
+   * @param password Password Verification Target
+   * @param encryptedPassword Valid password for string type
+   * @returns Match comparison results to return success or reject due to error
    */
   private async comparePassword(password: string, encryptedPassword: string) {
     return await bcrypt.compare(password, encryptedPassword);
   }
 
-  /**
-   * @description All visitor comment list retrieval methods
-   * @returns {Promise<{ visitorComments: VisitorCmtEntity[] }>}
+  /** 
+   * Methods for querying all visitor comments
+   * @returns `{ visitorComments: [{ id: number, nickname: string, description: string, date: string}]}`
    */
   async getVisitorComments(): Promise<{ visitorComments: VisitorCmtEntity[] }> {
     const visitorComments = await this.visitorRepository.getVisitorComments();
@@ -150,8 +154,9 @@ class Visitor {
   }
 
   /**
-   * @param {number} visitorCommentId visitor comment id you want to delete 
-   * @returns {Promise<boolean>}
+   * Method to delete visiting comments corresponding to IDs
+   * @param visitorCommentId Unique ID for deletion of number type
+   * @returns Returns an error because there is no target for deletion or returns true for success
    */
   async deleteVisitorCommentById(visitorCommentId: number): Promise<boolean> {
     const visitorComment = await this.visitorRepository.getVisitorCommentById(

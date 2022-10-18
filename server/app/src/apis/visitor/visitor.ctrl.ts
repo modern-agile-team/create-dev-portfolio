@@ -9,7 +9,7 @@ import { VisitorCmtDto } from './visitor';
  * Visitor increase and lookup API
  * @url /apis/visitor/count
  * @method patch
- * @resBody `{ statusCode: number, todayCount: number, totalCount: number, todayDate: string }` 
+ * @resBody `{ statusCode: number, todayCount: number, totalCount: number }` 
  * success response body
  * @resBody `{ statusCode: number, msg: string }` fail response body
  */
