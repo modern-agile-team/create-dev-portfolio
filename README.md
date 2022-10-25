@@ -2,7 +2,7 @@
 
 ![docker-badge](https://img.shields.io/badge/node-v16.18.0-green)
 ![docker-badge](https://img.shields.io/badge/npm-v8.19.2-green)
-![dev-portfolio-badge](https://img.shields.io/badge/npm--dependency-dev--portfolio@v2.1.2-green)  
+![dev-portfolio-badge](https://img.shields.io/badge/npm--dependency-dev--portfolio@v2.1.3-green)  
 ![docker-badge](https://img.shields.io/badge/npx-orange)
 ![docker-badge](https://img.shields.io/badge/boiler--plate--app-black)
 ![docker-badge](https://img.shields.io/badge/Docker-red)
