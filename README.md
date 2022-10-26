@@ -47,7 +47,7 @@ If you want to check the dev-portfolio library, please refer to the following li
      1. Click [here](https://docs.docker.com/get-docker/) to install Docker.
      2. Click [here](https://docs.docker.com/compose/install/) to install Docker Compose.
 3. **node** ≥ `v16.18.0`
-   - Using nvm, you can easily change the node version. Please refer to the following: [NVM](https://www.notion.so/NVM-53c04d5c8837480e8601e6bd39abc62a#6db02c02a5c549cbaaa7884cac709a9e)
+   - Using nvm, you can easily change the node version. Please refer to the following: [NVM](https://github.com/nvm-sh/nvm#install--update-script)
 4. **npm** ≥ `v8.19.2`
 
 ## Run
