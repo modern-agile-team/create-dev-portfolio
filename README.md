@@ -2,13 +2,12 @@
 
 ![docker-badge](https://img.shields.io/badge/node-v16.18.0-green)
 ![docker-badge](https://img.shields.io/badge/npm-v8.19.2-green)
-![dev-portfolio-badge](https://img.shields.io/badge/npm--dependency-dev--portfolio@v2.1.2-green)  
+![dev-portfolio-badge](https://img.shields.io/badge/npm--dependency-dev--portfolio@v2.1.5-green)  
 ![docker-badge](https://img.shields.io/badge/npx-orange)
 ![docker-badge](https://img.shields.io/badge/boiler--plate--app-black)
 ![docker-badge](https://img.shields.io/badge/Docker-red)
 ![docker-compose-badge](https://img.shields.io/badge/Docker_Compose-red)
 ![type-script-badge](https://img.shields.io/badge/TypeScript-blue)
-
 
 `create-dev-portfolio` is a boiler-plate application developed using the [dev-portfolio](https://github.com/modern-agile-team/dev-portfolio) library.
 It supports both clients and servers, and if you follow the <a href="recommended-systems">recommended systems</a> below, anyone can easily develop the web.
